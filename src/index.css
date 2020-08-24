@@ -1,13 +1,88 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.header h2 {
+  padding-top: 10px;
+  font-size: 17px;
+}
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+form {
+  display: grid;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+label {
+  padding-top: 30px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+input,
+textarea {
+  width: 430px;
+  height: 50px;
+}
+textarea {
+  height: 100px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none !important;
+  border: 1.5px solid #32cd32;
+}
+
+.button-form {
+  outline: none;
+  margin-top: 20px;
+  width: 40%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  padding: 10px 0;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border: 3px solid #32cd32;
+  background-color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.button-form:hover {
+  background-color: #32cd32;
+  color: #fff;
+}
+
+.err {
+  border: 1.5px solid red;
+}
+
+.error {
+  font-size: 10px;
+  padding-top: 7px;
+  font-weight: 700;
+  color: red;
 }
