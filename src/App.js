@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import Header from "./Header";
+import Header from "./components/Header";
 import InputName from "./components/InputName";
 import InputEmail from "./components/InputEmail";
 import InputText from "./components/InputText";
 import validateEmail from "./regex/emailRegex";
+
+import {
+  Form,
+  ContactFormDiv,
+  FormButton,
+  InputError,
+} from "./components/styled/StyledForm";
 
 const App = () => {
   const [userName, setUserName] = useState("");
@@ -22,8 +29,8 @@ const App = () => {
 
   const { notEmpty, incorrect } = showError;
 
-  const errorIsEmpty = <span className="error">{notEmpty}</span>;
-  const errorIncorrect = <span className="error">{incorrect}</span>;
+  const errorIsEmpty = <InputError>{notEmpty}</InputError>;
+  const errorIncorrect = <InputError>{incorrect}</InputError>;
 
   function checkUserNameValid() {
     if (!userName) {
@@ -62,8 +69,8 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="contact-form">
-        <form onSubmit={onFormSubmit} className="contact">
+      <ContactFormDiv>
+        <Form onSubmit={onFormSubmit} className="contact">
           <InputName
             inputValue={userName}
             inputChange={setUserName}
@@ -79,9 +86,9 @@ const App = () => {
             inputChange={setUserText}
             inputError={errorText}
           />
-          <button className="button-form">Wyślij</button>
-        </form>
-      </div>
+          <FormButton>Wyślij</FormButton>
+        </Form>
+      </ContactFormDiv>
     </>
   );
 };

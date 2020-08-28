@@ -1,4 +1,5 @@
 import React from "react";
+import { StyledLabel, Input } from "./styled/StyledForm";
 
 const InputName = ({ inputValue, inputChange, inputError }) => {
   function onInputChange(e) {
@@ -6,8 +7,8 @@ const InputName = ({ inputValue, inputChange, inputError }) => {
   }
   return (
     <>
-      <label htmlFor="name">Imię </label>
-      <input
+      <StyledLabel htmlFor="name">Imię</StyledLabel>
+      <Input
         onChange={onInputChange.bind(this)}
         value={inputValue}
         type="text"
